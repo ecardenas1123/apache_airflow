@@ -23,7 +23,7 @@ def _process_user(ti):
 
 def _store_user():
     hook = PostgresHook(postgres_conn_id="postgres")
-    hook.copy._expert(
+    hook.copy_expert(
         sql="COPY users FROM stdin WITH DELIMITER ','",
         filename="/tmp/processed_user.csv"
     )
